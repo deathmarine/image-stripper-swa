@@ -1,0 +1,23 @@
+{
+  "routes": [
+    {
+      "route": "/api/*",
+      "methods": ["POST"],
+      "allowedRoles": ["anonymous"],
+      "headers": {
+        "Cache-Control": "no-store"
+      }
+    }
+  ],
+  "globalHeaders": {
+    "Content-Security-Policy": "default-src 'self'; connect-src 'self'; img-src 'self' blob: data:; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'",
+    "Permissions-Policy": "camera=(), geolocation=(), microphone=()",
+    "Referrer-Policy": "no-referrer",
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY"
+  },
+  "platform": {
+    "apiRuntime": "node:22"
+  },
+  "trailingSlash": "never"
+}

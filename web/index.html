@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Remove metadata from JPEG, PNG, and WebP images."
+    />
+    <meta name="theme-color" content="#f4f0e8" />
+    <title>Deathmarine's | Image metadata remover</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="site-header">
+        <a class="wordmark" href="/" aria-label="deathmarine home">
+          <span class="wordmark-mark" aria-hidden="true"></span>
+          Deathmarine's Tools
+        </a>
+        <div class="privacy-note">
+          <i data-lucide="shield-check" aria-hidden="true"></i>
+          <span>Processed without storage</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <p class="kicker">Private by design / API processed</p>
+          <h1 id="page-title">Image metadata remover</h1>
+          <p class="lede">
+            Clean location, camera, and author data from JPEG, PNG, and WebP files.
+          </p>
+        </section>
+
+        <section class="tool" aria-label="Image metadata removal tool">
+          <input
+            id="file-input"
+            class="visually-hidden"
+            type="file"
+            accept="image/jpeg,image/png,image/webp"
+            multiple
+          />
+          <label id="drop-zone" class="drop-zone" for="file-input" tabindex="0">
+            <span class="drop-icon"><i data-lucide="upload-cloud" aria-hidden="true"></i></span>
+            <span class="drop-title">Drop images here</span>
+            <span class="drop-copy">or choose files up to 10 MB each</span>
+            <span class="choose-button">Choose images</span>
+          </label>
+
+          <div id="queue-panel" class="queue-panel" hidden>
+            <div class="queue-heading">
+              <div>
+                <p class="section-label">Ready to clean</p>
+                <h2 id="queue-count">0 images</h2>
+              </div>
+              <button id="clear-button" class="icon-button" type="button" title="Clear images">
+                <i data-lucide="trash-2" aria-hidden="true"></i>
+                <span class="visually-hidden">Clear images</span>
+              </button>
+            </div>
+            <div id="file-list" class="file-list" aria-live="polite"></div>
+            <div class="tool-actions">
+              <p id="queue-summary" class="queue-summary"></p>
+              <button id="process-button" class="primary-button" type="button">
+                <i data-lucide="sparkles" aria-hidden="true"></i>
+                <span>Remove metadata</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section id="results-panel" class="results-panel" aria-labelledby="results-title" hidden>
+          <div class="results-heading">
+            <div>
+              <p class="section-label">Clean files</p>
+              <h2 id="results-title">Ready to download</h2>
+            </div>
+            <button id="download-all-button" class="secondary-button" type="button">
+              <i data-lucide="download" aria-hidden="true"></i>
+              <span>Download all</span>
+            </button>
+          </div>
+          <div id="result-list" class="result-list"></div>
+        </section>
+      </main>
+
+      <footer>
+        <span>Files are sent over HTTPS and discarded after each request.</span>
+        <span>JPEG / PNG / WebP</span>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

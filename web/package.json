@@ -1,0 +1,19 @@
+{
+  "name": "image-strip-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "vite",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "lucide": "^0.468.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "vite": "^7.1.5"
+  }
+}
