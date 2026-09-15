@@ -1,4 +1,4 @@
-# Iamge Metadata Remover
+# Image Metadata Remover
 
 This utility removes metadata from JPEG, PNG, and WebP images. The browser uploads one file at a time to an Azure Static Web Apps managed Functions API. The API applies embedded orientation, re-encodes the image without copying EXIF, XMP, or IPTC data, and returns the result directly. Images are never persisted.
 
